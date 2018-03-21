@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <title>Ejercicio 7</title>
+
+    <script>$(function() {
+        $('#carousel5').carousel({
+            interval: 100,
+            pause:false
+        })
+    });
+
+    function moverCarousel(){
+        $('#carousel7').carousel('cycle');
+    }
+
+    function pararCarousel(){
+        $('#carousel7').carousel('pause');
+    }
+
+    function moverXCarousel(){
+        $('#carousel7').carousel(2);
+    }
+
+    function moverAnteriorCarousel(){
+        $('#carousel7').carousel('prev');
+    }
+
+    function moverSiguienteCarousel(){
+        $('#carousel7').carousel('next');
+    }
+
+    $(function() {
+        $('#carousel7').on('slide.bs.carousel', function (event) {
+            alert(
+                "Se va a mostrar la siguiente imagen"+
+                "\n Direccion:"+event.direction+
+                "\n RelatedTarget:"+event.relatedTarget.id+
+                "\n From:"+event.from +
+                "\n To:"+event.to
+            )
+        })
+
+        $('#carousel7').on('slid.bs.carousel', function (event) {
+            alert(
+                "Se ha mostrado la imagen"+
+                "\n Direccion:"+event.direction+
+                "\n RelatedTarget:"+event.relatedTarget.id+
+                "\n From:"+event.from +
+                "\n To:"+event.to
+            )
+        })
+    });</script>
+
+</head>
+<body>
+<button onclick="moverCarousel()">Mover carousel</button>
+<button onclick="pararCarousel()">Parar carousel</button>
+<button onclick="moverXCarousel()">Mover 2 posiciones carousel</button>
+<button onclick="moverAnteriorCarousel()">Mover Anterior posición</button>
+<button onclick="moverSiguienteCarousel()">Mover Siguiente posición</button>
+
+<div id="carousel7" class="carousel slide w-100 m-auto" data-interval="5000">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel7" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel7" data-slide-to="1"></li>
+        <li data-target="#carousel7" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div id="divImagen1" class="carousel-item active">
+            <img id="imagen1" class="img-fluid w-100" src="../ejercicio6/Goku_DB_Artwork.png" alt="Primera imagen">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Primera Imagen</h5>
+                <p>Imagen de Prueba de Informáticos</p>
+            </div>
+        </div>
+        <div id="divImagen2"  class="carousel-item">
+            <img id="imagen2" class="img-fluid w-100" src="../ejercicio6/5g1YbYDQ_400x400.png" alt="Segunda imagen">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Segunda Imagen</h5>
+                <p>Imagen de Prueba de Informáticos</p>
+            </div>
+        </div>
+        <div  id="divImagen3" class="carousel-item">
+            <img id="imagen4" class="img-fluid w-100" src="../ejercicio6/5852cd6658215f0354495f68.png" alt="Tercera imagen">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Tercera Imagen</h5>
+                <p>Imagen de Prueba de Informáticos</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
